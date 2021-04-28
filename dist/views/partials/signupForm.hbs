@@ -27,7 +27,7 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="p-3 mb-2 bg-dark text-white">Sign Up</h3>
+                    <h3 class="p-3 mb-2 bg-dark text-white">Crear cuenta</h3>
                 </div>
                 <div class="card-body"></div>
                 <form action="../user/signup" method="post">
@@ -37,10 +37,17 @@
                         <input type="email" name="email" placeholder="email" class="form-control">
                         <input type="password" name="password" placeholder="Contraseña" class="form-control">
                         <input type="password" name="repassword" placeholder="Repetir Contraseña" class="form-control">
-                        <button class="btn btn-primary btn-block">Enviar</button>
+                        <button class="btn btn-success btn-block">Enviar</button>
                         </div>
                     </div>
                 </form>
+                        <form action="../user/signin" method="post">
+                        <div class="form-group">
+                          <div class="container-fluid">                
+                            <a href="" class="btn btn-primary btn-block">Crear cuenta de Organizacion</a>
+                          </div>
+                        </div>
+                    </form>
             </div>
         </div>
     </div>
