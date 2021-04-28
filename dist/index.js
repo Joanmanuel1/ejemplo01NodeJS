@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const express_handlebars_1 = __importDefault(require("express-handlebars"));
 const path_1 = __importDefault(require("path"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -31,11 +32,12 @@ class Server {
         this.app.use(morgan_1.default('dev'));
         this.app.use(cors_1.default()); //iniciamos cors
         this.app.use(express_1.default.json()); //habilitamos el intercambio de objetos json entre aplicaciones
-        this.app.use(express_1.default.urlencoded({ extended: false })); //habilitamos para recibir datos a traves de formularios html.
+        this.app.use(express_1.default.urlencoded({ extended: true }));
         //Variables globales
     }
     routes() {
         this.app.use(indexRoutes_1.default);
+        this.app.use("/user", userRoutes_1.default); //user sera un objeto existene en la app.
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
